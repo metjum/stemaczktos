@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        h2 {
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .language-switcher {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Terms of Service</h1>
+
+    <div class="language-switcher">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('cs')">Čeština</button>
+    </div>
+
+    <div id="content">
+        <h2 id="intro">Introduction</h2>
+        <p id="intro-text">This extension has a single purpose: to convert Euro prices displayed on the Steam store to Czech Koruna.</p>
+        
+        <h2 id="functionality">Functionality</h2>
+        <p id="functionality-text">The extension searches for all instances of Euro prices on the page and replaces them with their equivalent values in CZK based on the current exchange rate. The conversion process is seamless and provides users with a better understanding of prices in their local currency.</p>
+        
+        <h2 id="permissions">Permissions</h2>
+        <h3 id="storage">Storage Justification</h3>
+        <p id="storage-text">The extension uses the 'storage' permission to save the current exchange rate for Euro to Czech Koruna. This allows the extension to efficiently retrieve and apply the exchange rate for price conversions without needing to fetch it from an external source each time the page loads.</p>
+        
+        <h3 id="active-tab">Active Tab Justification</h3>
+        <p id="active-tab-text">The 'activeTab' permission is necessary to allow the extension to access the currently active tab where the user is browsing the Steam store. This permission enables the extension to modify the content of the page and replace Euro prices with their equivalent values in CZK.</p>
+        
+        <h3 id="scripting">Scripting Justification</h3>
+        <p id="scripting-text">The 'scripting' permission is required for the extension to run JavaScript code that modifies the DOM of the Steam store pages. This allows the extension to search for price elements and replace their content dynamically as users navigate the store.</p>
+
+        <h3 id="host-permission">Host Permission Justification</h3>
+        <p id="host-permission-text">The host permission for 'store.steampowered.com' is necessary because the extension specifically targets this domain to perform price conversions. By having this permission, the extension can access the HTML content of the Steam store pages and accurately replace Euro prices with their equivalent values in CZK.</p>
+        
+        <h2 id="contact">Contact Us</h2>
+        <p id="contact-text">If you have any questions, please contact us at support@example.com.</p>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                intro: "Introduction",
+                introText: "This extension has a single purpose: to convert Euro prices displayed on the Steam store to Czech Koruna.",
+                functionality: "Functionality",
+                functionalityText: "The extension searches for all instances of Euro prices on the page and replaces them with their equivalent values in CZK based on the current exchange rate. The conversion process is seamless and provides users with a better understanding of prices in their local currency.",
+                permissions: "Permissions",
+                storage: "Storage Justification",
+                storageText: "The extension uses the 'storage' permission to save the current exchange rate for Euro to Czech Koruna. This allows the extension to efficiently retrieve and apply the exchange rate for price conversions without needing to fetch it from an external source each time the page loads.",
+                activeTab: "Active Tab Justification",
+                activeTabText: "The 'activeTab' permission is necessary to allow the extension to access the currently active tab where the user is browsing the Steam store. This permission enables the extension to modify the content of the page and replace Euro prices with their equivalent values in CZK.",
+                scripting: "Scripting Justification",
+                scriptingText: "The 'scripting' permission is required for the extension to run JavaScript code that modifies the DOM of the Steam store pages. This allows the extension to search for price elements and replace their content dynamically as users navigate the store.",
+                hostPermission: "Host Permission Justification",
+                hostPermissionText: "The host permission for 'store.steampowered.com' is necessary because the extension specifically targets this domain to perform price conversions. By having this permission, the extension can access the HTML content of the Steam store pages and accurately replace Euro prices with their equivalent values in CZK.",
+                contact: "Contact Us",
+                contactText: "If you have any questions, please contact us at support@example.com."
+            },
+            cs: {
+                intro: "Úvod",
+                introText: "Toto rozšíření má jediný účel: převést ceny v Eurech zobrazené na obchodě Steam na české koruny.",
+                functionality: "Funkčnost",
+                functionalityText: "Rozšíření vyhledává všechny instance cen v Eurech na stránce a nahrazuje je jejich ekvivalentními hodnotami v CZK na základě aktuálního směnného kurzu. Proces konverze je plynulý a poskytuje uživatelům lepší přehled o cenách v jejich místní měně.",
+                permissions: "Oprávnění",
+                storage: "Odůvodnění ukládání",
+                storageText: "Rozšíření používá oprávnění 'storage' k uložení aktuálního směnného kurzu pro Euro na české koruny. To umožňuje rozšíření efektivně načíst a aplikovat směnný kurz pro převody cen, aniž by bylo nutné jej z externího zdroje načítat při každém načtení stránky.",
+                activeTab: "Odůvodnění aktivní karty",
+                activeTabText: "Oprávnění 'activeTab' je nezbytné pro to, aby rozšíření mělo přístup k aktuální aktivní kartě, kde uživatel prohlíží obchod Steam. Toto oprávnění umožňuje rozšíření upravit obsah stránky a nahradit ceny v Eurech jejich ekvivalentními hodnotami v CZK.",
+                scripting: "Odůvodnění skriptování",
+                scriptingText: "Oprávnění 'scripting' je vyžadováno pro to, aby rozšíření mohlo spouštět JavaScriptový kód, který modifikuje DOM stránek obchodu Steam. To umožňuje rozšíření vyhledávat prvky cen a dynamicky nahrazovat jejich obsah, jak uživatelé procházejí obchodem.",
+                hostPermission: "Odůvodnění oprávnění hostitele",
+                hostPermissionText: "Oprávnění hostitele pro 'store.steampowered.com' je nezbytné, protože rozšíření cíleně zaměřuje na tuto doménu k provádění převodů cen. Mít toto oprávnění umožňuje rozšíření přístup k HTML obsahu stránek obchodu Steam a přesně nahrazovat ceny v Eurech jejich ekvivalentními hodnotami v CZK.",
+                contact: "Kontaktujte nás",
+                contactText: "Pokud máte nějaké dotazy, kontaktujte nás na support@example.com."
+            }
+        };
+
+        function switchLanguage(lang) {
+            document.getElementById("intro").innerText = translations[lang].intro;
+            document.getElementById("intro-text").innerText = translations[lang].introText;
+            document.getElementById("functionality").innerText = translations[lang].functionality;
+            document.getElementById("functionality-text").innerText = translations[lang].functionalityText;
+            document.getElementById("permissions").innerText = translations[lang].permissions;
+            document.getElementById("storage").innerText = translations[lang].storage;
+            document.getElementById("storage-text").innerText = translations[lang].storageText;
+            document.getElementById("active-tab").innerText = translations[lang].activeTab;
+            document.getElementById("active-tab-text").innerText = translations[lang].activeTabText;
+            document.getElementById("scripting").innerText = translations[lang].scripting;
+            document.getElementById("scripting-text").innerText = translations[lang].scriptingText;
+            document.getElementById("host-permission").innerText = translations[lang].hostPermission;
+            document.getElementById("host-permission-text").innerText = translations[lang].hostPermissionText;
+            document.getElementById("contact").innerText = translations[lang].contact;
+            document.getElementById("contact-text").innerText = translations[lang].contactText;
+        }
+
+
+        switchLanguage('en');
+    </script>
+</body>
+</html>
